@@ -12,8 +12,8 @@ import {
     withRouter
 } from "react-router-dom"
 import Users from "./components/users-page/Users";
-import Posts from "./components/posts=page/Posts";
-import Comments from "./components/comments-page/Comments";
+import Posts from "./components/posts-page/Posts-page";
+import Comments from "./components/comments-page/Comments-page";
 
 
 export default function App() {
