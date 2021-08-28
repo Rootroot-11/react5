@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+// Є три лінки
+// /users-page
+// /posts-page
+// /comments-page
+// При кліку на відповідну лінку відбувається перехід на відповідний компонент,
+//     який дістає з jsonplaceholder інформацію про відповідні стуності, та виводить їх повний список
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    withRouter
+} from "react-router-dom"
+import Users from "./components/users-page/Users";
+import Posts from "./components/posts=page/Posts";
+import Comments from "./components/comments-page/Comments";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default function App() {
+    return (
+        <Router>
+            <div>
+                <Link to={'/'}>to default page</Link>
+                <br/>
+                <Link to={'/all users'}>users</Link>
+                <br/>
+                <Link to={'/posts'}>posts</Link>
+                <br/>
+                <Link to={'/comments'}>comments</Link>
+                <Switch>
+
+                    <Route path={'/all users'} component={Users}/>
+                    <Route path={'/posts'} component={Posts}/>
+                    <Route path={'/comments'} component={Comments}/>
+
+                </Switch>
+
+            </div>
+        </Router>
+    );
 }
-
-export default App;
