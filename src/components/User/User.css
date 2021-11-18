@@ -1,0 +1,23 @@
+.user {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background-color: #fff;
+    grid-column: 1/2;
+    font-size: 13px;
+}
+
+
+.user_type {
+    text-align: center;
+}
+
+.user div {
+    width: 180px;
+}
+
+.user:hover {
+    background-color: #abb2c4;
+}

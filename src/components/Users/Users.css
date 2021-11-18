@@ -1,0 +1,18 @@
+.users {
+    background-color: #fff;
+    box-shadow: 0px 0px 30px #523F690D;
+    border: 1px solid #EBEDF3;
+    border-radius: 6px;
+    padding-bottom: 78px;
+    font-size: 13px;
+    grid-column: 1/2;
+}
+.users_top {
+    font-weight: 700;
+    padding: 26px 26px 16px;
+    color: #A4A4B5;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+}
