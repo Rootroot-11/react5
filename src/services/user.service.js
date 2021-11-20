@@ -1,3 +1,5 @@
+let url = 'http://localhost:5000';
+
 const getUsers = () => {
     return fetch('http://localhost:5000/users')
         .then(value => value.json())
@@ -19,6 +21,17 @@ const postUser = (user) => {
         .then((response) => response.json());
 };
 
+const updateUsers = (user, id) => {
+    return fetch(url + '/users/' + id, {
+        method: 'PUT',
+        body: JSON.stringify(user),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then(response => response.json())
+};
+
 const deleteUser = (id) => {
     return fetch(`http://localhost:5000/user/${id}`, {
         method: 'DELETE'
@@ -26,6 +39,4 @@ const deleteUser = (id) => {
         .then(value => value.json());
 };
 
-export {getUsers, getUser, postUser, deleteUser};
-
-
+export {getUsers, getUser, postUser, deleteUser, updateUsers};
