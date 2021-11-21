@@ -14,10 +14,10 @@ function App() {
     };
 
     return (
-        <div className={'app'}>
-            <div className={'app__inner'}>
+        <div>
+            <div>
                 <div className={`message ${domReducer.message.class}`}>{domReducer.message.text}</div>
-                <button className={'btn-create'} onClick={showForm}>Create User</button>
+                <button onClick={showForm}>Create User</button>
                 <Users/>
                 <FormUser/>
             </div>
