@@ -2,8 +2,6 @@ import Select from 'react-select';
 import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {stateFormMessage, stateFormUser, stateInputError, stateUser} from '../../redux/actions/users.actions';
-
-// import './FormUser.css';
 import {postUser, deleteUser, updateUsers} from '../../services/user.service';
 import {regularPassword, regularEmail, selectOptions, userModel} from '../../config';
 
@@ -87,32 +85,32 @@ export default function FormUser() {
     };
 
     return (
-        <div className={`form-user ${domReducer.formUser}`}>
-            <button className={'btn-close'} onClick={hideForm}>X</button>
+        <div>
+            <button onClick={hideForm}>X</button>
             <div className={'form-user__name'}>
                 {userForm.firstName.length > 0 ? `${nameTitle.firstName} ${userForm.lastName}` : 'Create new user'}
             </div>
 
             <form onSubmit={handleSubmitSave}>
-                <label className={domReducer.inputError === 'userName' ? 'error' : ''}>
+                <label>
                     Username*
                     <input type="text" name={'userName'} onChange={onchange} value={userForm.userName || ''}/>
                     <span>Error message</span>
                 </label>
 
-                <label className={domReducer.inputError === 'firstName' ? 'error' : ''}>
+                <label>
                     First name*
                     <input type="text" name={'firstName'} onChange={onchange} value={userForm.firstName || ''}/>
                     <span>Error message</span>
                 </label>
 
-                <label className={domReducer.inputError === 'lastName' ? 'error' : ''}>
+                <label>
                     Last name*
                     <input type="text" name={'lastName'} onChange={onchange} value={userForm.lastName || ''}/>
                     <span>Error message</span>
                 </label>
 
-                <label className={domReducer.inputError === 'email' ? 'error' : ''}>
+                <label>
                     Email*
                     <input type="text" name={'email'} onChange={onchange} value={userForm.email || ''}/>
                     <span>Error message</span>
@@ -128,21 +126,21 @@ export default function FormUser() {
                         options={selectOptions}/>
                 </label>
 
-                <label className={domReducer.inputError === 'password' ? 'error' : ''}>
+                <label>
                     Password*
                     <input type="password" name={'password'} onChange={onchange} value={userForm.password || ''}/>
                     <span>Error message</span>
                 </label>
 
-                <label className={domReducer.inputError === 'repeatPassword' ? 'error' : ''}>
+                <label>
                     Repeat password*
                     <input type="password" name={'repeatPassword'} onChange={onchange} value={userForm.repeatPassword || ''}/>
                     <span>Error message</span>
                 </label>
 
-                <div className={userForm._id ? 'form-user__btns update' : 'form-user__btns'}>
-                    <button className={'form-user__delete'} onClick={handleSubmitDelete}>Delete</button>
-                    <button className={'form-user__save'}>{userForm._id ? 'Save' : 'Create'}</button>
+                <div>
+                    <button onClick={handleSubmitDelete}>Delete</button>
+                    <button>{userForm._id ? 'Save' : 'Create'}</button>
                 </div>
             </form>
         </div>
