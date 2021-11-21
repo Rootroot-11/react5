@@ -5,11 +5,6 @@ const getUsers = () => {
         .then(response => response.json())
 };
 
-const getUser = (id) => {
-    return fetch(url + '/users/' + id)
-        .then(response => response.json())
-};
-
 const postUser = (user) => {
     return fetch(url + '/users', {
         method: 'POST',
@@ -32,11 +27,11 @@ const updateUsers = (user, id) => {
         .then(response => response.json())
 };
 
-const deleteUser = (id) => {
+const deleteUsers = (id) => {
     return fetch(url + '/users/' + id, {
         method: 'DELETE'
     })
         .then(response => response.json());
 };
 
-export {getUsers, getUser, postUser, deleteUser, updateUsers};
+export {getUsers, postUser, deleteUsers, updateUsers};
