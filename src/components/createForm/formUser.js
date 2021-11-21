@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {stateFormMessage, stateFormUser, stateInputError, stateUser} from '../../redux/actions/users.actions';
 import {postUser, deleteUser, updateUsers} from '../../services/user.service';
 import {regularPassword, regularEmail, selectOptions, userModel} from '../../config';
-
+// import './formUser.css';
 
 export default function FormUser() {
     const dispatch = useDispatch();
